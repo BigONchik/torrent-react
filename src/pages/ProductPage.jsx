@@ -8,8 +8,8 @@ const ProductPage = () => {
   return (
     <div>
       <Grid container>
-        <Sidebar />
         <ProductList />
+        <Sidebar />
       </Grid>
     </div>
   );

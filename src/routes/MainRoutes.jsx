@@ -53,7 +53,7 @@ const MainRoutes = () => {
     {
       link: "/admin",
       element: <AdminPage />,
-      id: 2,
+      id: 7,
     },
     {
       link: "/edit/:id",

@@ -12,15 +12,16 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import Header from "./Header";
 
 const pages = [
-  { name: "Главная", link: "/", id: 1 },
+  { name: "Главная", link: "/products", id: 1 },
   { name: "Новые игры", link: "/products", id: 2 },
-  { name: "Репаки от Игрухи", link: "/admin", id: 3 },
-  { name: "По сети", link: "/admin", id: 3 },
-  { name: "Заказать игру", link: "/admin", id: 3 },
-  { name: "Поддежать", link: "/admin", id: 3 },
-  { name: "ADMIN", link: "/admin", id: 3 },
+  { name: "Репаки от Игрухи", link: "/products", id: 3 },
+  { name: "По сети", link: "/products", id: 4 },
+  { name: "Заказать игру", link: "/products", id: 5 },
+  { name: "Поддежать 💰", link: "/products", id: 6 },
+  { name: "ADMIN", link: "/admin", id: 7 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -46,21 +47,21 @@ function Navbar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#171a21", height: "100px" }}
+      sx={{ backgroundColor: "#171a21", height: "70px" }}
     >
       <Container
         maxWidth="xl"
         sx={{
           display: "flex",
           justifyContent: "center",
-          margin: "0",
+          marginLeft: "0",
           width: "100%",
         }}
       >
         <Toolbar
           disableGutters
           sx={{
-            height: "100px",
+            height: "50px",
             width: "100%",
             display: "flex",
             justifyContent: "center",
@@ -112,13 +113,22 @@ function Navbar() {
               <Link key={page.id} to={page.link}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    "&:hover": {
+                      color: "white",
+                      backgroundColor: "transparent",
+                    },
+
+                    color: "#8A8A8A",
+                    display: "block",
+                  }}
                 >
                   {page.name}
                 </Button>
               </Link>
             ))}
           </Box>
+
           <Tooltip title="Open settings">
             <IconButton
               onClick={handleOpenUserMenu}
@@ -126,8 +136,8 @@ function Navbar() {
                 p: 0,
                 display: "flex",
                 justifyContent: "flex-end",
-                width: "8%",
-                marginLeft: "28%",
+                width: "3%",
+                marginLeft: "2%",
               }}
             >
               <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
