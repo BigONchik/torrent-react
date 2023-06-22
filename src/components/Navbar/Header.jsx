@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div style={{ color: "red", zIndex: "0" }}>
+    <div style={{ color: "white", zIndex: "0" }}>
       <Box
         sx={{
           padding: "24px 0 24px 0",

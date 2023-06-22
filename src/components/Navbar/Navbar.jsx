@@ -12,15 +12,16 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 
 const pages = [
-  { name: "Главная", link: "/products", id: 1 },
-  { name: "Новые игры", link: "/products", id: 2 },
-  { name: "Репаки от Игрухи", link: "/products", id: 3 },
-  { name: "По сети", link: "/products", id: 4 },
-  { name: "Заказать игру", link: "/products", id: 5 },
-  { name: "Поддежать 💰", link: "/products", id: 6 },
+  { name: "Главная", link: "/", id: 1 },
+
+  { name: "Заказать игру", link: "/support", id: 5 },
+  {
+    name: "Поддежать 💰",
+    link: "https://vk.com/torrent_igruha?w=app6471849_-126357200",
+    id: 6,
+  },
   { name: "ADMIN", link: "/admin", id: 7 },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -54,7 +55,7 @@ function Navbar() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "0",
+          marginLeft: "10%",
           width: "100%",
         }}
       >

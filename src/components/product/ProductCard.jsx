@@ -7,8 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
-import { IconButton } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { Box, IconButton } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
@@ -22,11 +22,11 @@ export default function ProductCard({ item }) {
   } = useAuth();
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 250, backgroundColor: "#313843" }}>
       <CardMedia
         sx={{
           height: 0,
-          paddingTop: "100%", // Set the paddingTop to 100% for full image display
+          paddingTop: "150%", // Set the paddingTop to 100% for full image display
           cursor: "pointer",
           maxWidth: "100%",
         }}
@@ -34,11 +34,20 @@ export default function ProductCard({ item }) {
         title="green iguana"
         onClick={() => navigate(`/details/${item.id}`)}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent sx={{ backgroundColor: "#313843" }}>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ color: "lightgray" }}
+        >
           {item.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ color: "lightgray" }}
+        >
           {item.price} $
         </Typography>
       </CardContent>
@@ -50,6 +59,7 @@ export default function ProductCard({ item }) {
       />
       <CardActions
         sx={{
+          backgroundColor: "#313843",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -67,11 +77,11 @@ export default function ProductCard({ item }) {
         ) : (
           <IconButton
             sx={{
-              color: checkProductCart(item.id) ? "primary" : "inherit",
+              color: checkProductCart(item.id) ? "red" : "inherit",
             }}
             onClick={() => addProductToCart(item)}
           >
-            <AddShoppingCartIcon />
+            <FavoriteIcon />
           </IconButton>
         )}
       </CardActions>

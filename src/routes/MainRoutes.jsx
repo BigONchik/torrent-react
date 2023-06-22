@@ -1,5 +1,4 @@
 import React from "react";
-import HomePage from "../pages/HomePage";
 import AdminPage from "../pages/AdminPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import { Navigate, Route, Routes } from "react-router-dom";
@@ -12,24 +11,19 @@ import CartPage from "../pages/CartPage";
 import AuthPage from "../pages/AuthPage";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { ADMIN } from "../helpers/consts";
+import SupportPage from "../pages/SupportPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
-    {
-      link: "/",
-      element: <HomePage />,
-      id: 1,
-    },
-
     {
       link: "*",
       element: <NotFoundPage />,
       id: 3,
     },
     {
-      link: "/products",
+      link: "/",
       element: <ProductPage />,
-      id: 4,
+      id: 1,
     },
 
     {
@@ -47,9 +41,6 @@ const MainRoutes = () => {
       element: <AuthPage />,
       id: 8,
     },
-  ];
-
-  const PRIVATE_ROUTES = [
     {
       link: "/admin",
       element: <AdminPage />,
@@ -60,7 +51,13 @@ const MainRoutes = () => {
       element: <EditProductPage />,
       id: 5,
     },
+    {
+      link: "/support",
+      element: <SupportPage />,
+    },
   ];
+
+  const PRIVATE_ROUTES = [];
 
   const { user } = useAuth();
   return (

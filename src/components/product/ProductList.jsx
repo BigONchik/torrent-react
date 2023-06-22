@@ -1,9 +1,12 @@
+// ProductList.jsx
+
 import { Box, Grid, Pagination } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
+import Sidebar from "./Sidebar";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
@@ -15,7 +18,7 @@ const ProductList = () => {
 
   // pagination
   const [page, setPage] = useState(1);
-  const itemsPerPage = 9; // 3 cards per row and 3 rows
+  const itemsPerPage = 12; // 4 cards per row and 3 rows
   const count = Math.ceil(products.length / itemsPerPage);
 
   const handleChange = (e, p) => {
@@ -31,23 +34,38 @@ const ProductList = () => {
   // pagination
 
   return (
-    <Grid item md={9}>
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "20px",
-        }}
-      >
-        {currentData().map((item) => (
-          <ProductCard
-            key={item.id}
-            item={item}
-            sx={{ marginBottom: "20px" }}
+    <Grid container sx={{ width: "100%", marginLeft: "25%" }}>
+      <Grid item md={8}>
+        <Box
+          sx={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "20px",
+            overflowX: "auto",
+            paddingRight: "20px",
+          }}
+        >
+          {currentData().map((item) => (
+            <ProductCard
+              key={item.id}
+              item={item}
+              sx={{ marginBottom: "20px" }}
+            />
+          ))}
+        </Box>
+        <Grid container justifyContent="center">
+          <Pagination
+            color="primary"
+            count={count}
+            page={page}
+            onChange={handleChange}
           />
-        ))}
-      </Box>
-      <Pagination count={count} page={page} onChange={handleChange} />
+        </Grid>
+      </Grid>
+      <Grid item md={4}>
+        <Sidebar />
+      </Grid>
     </Grid>
   );
 };
