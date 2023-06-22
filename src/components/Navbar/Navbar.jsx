@@ -55,7 +55,7 @@ function Navbar() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "10%",
+          marginLeft: "0",
           width: "100%",
         }}
       >

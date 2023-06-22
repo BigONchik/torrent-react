@@ -3,12 +3,13 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div style={{ color: "white", zIndex: "0" }}>
+    <div style={{ color: "white" }}>
       <Box
         sx={{
           padding: "24px 0 24px 0",
           position: "relative",
           margin: "0 auto",
+          marginLeft: "25%",
           width: "996px",
         }}
       >

@@ -4,6 +4,7 @@ import {
   FormControlLabel,
   FormLabel,
   Grid,
+  Link,
   Paper,
   Radio,
   RadioGroup,
@@ -22,6 +23,13 @@ const Sidebar = () => {
         elevation={3}
         sx={{ p: 2, boxShadow: 0, width: "100%", backgroundColor: "#313843" }}
       >
+        <Link sx={{ "&:hover": { boxShadow: " 0 0 35px green" } }}>
+          <img
+            src="https://itorrents-igruha.org/uploads/posts/2023-02/1677002741_cover2.jpg"
+            alt=""
+            style={{ maxHeight: "320px" }}
+          />
+        </Link>
         <FormControl>
           <FormLabel
             id="demo-radio-buttons-group-label"
@@ -40,6 +48,7 @@ const Sidebar = () => {
               control={<Radio sx={{ display: "none" }} />}
               label="All"
               sx={{
+                color: "#C2C3C4",
                 borderRadius: "15%",
                 margin: "10%",
                 backgroundColor: "#313843",
@@ -55,6 +64,7 @@ const Sidebar = () => {
               control={<Radio sx={{ display: "none" }} />}
               label="Clothes"
               sx={{
+                color: "#C2C3C4",
                 borderRadius: "15%",
                 margin: "10%",
                 backgroundColor: "#313843",
@@ -70,6 +80,7 @@ const Sidebar = () => {
               control={<Radio sx={{ display: "none" }} />}
               label="Shoes"
               sx={{
+                color: "#C2C3C4",
                 borderRadius: "15%",
                 margin: "10%",
                 backgroundColor: "#313843",
@@ -85,6 +96,7 @@ const Sidebar = () => {
               control={<Radio sx={{ display: "none" }} />}
               label="Accessories"
               sx={{
+                color: "#C2C3C4",
                 borderRadius: "15%",
                 margin: "10%",
                 backgroundColor: "#313843",
