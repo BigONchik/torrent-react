@@ -24,7 +24,7 @@ const pages = [
   },
   { name: "ADMIN", link: "/admin", id: 7 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Settings", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -55,7 +55,7 @@ function Navbar() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "10%",
+          marginLeft: "0%",
           width: "100%",
         }}
       >
@@ -138,9 +138,22 @@ function Navbar() {
                 display: "flex",
                 justifyContent: "flex-end",
                 width: "3%",
-                marginLeft: "2%",
+                marginLeft: "6%",
               }}
             >
+              <Button
+                sx={{
+                  "&:hover": {
+                    color: "white",
+                    backgroundColor: "transparent",
+                  },
+
+                  color: "#8A8A8A",
+                  display: "block",
+                }}
+              >
+                Войти
+              </Button>
               <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
             </IconButton>
           </Tooltip>

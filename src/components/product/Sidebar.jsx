@@ -22,9 +22,13 @@ const Sidebar = () => {
       <Box
         sx={{
           marginBottom: "45%",
-          width: "100%",
-          height: "100%",
-          boxShadow: "0 0 10px green",
+          width: "190px",
+          height: "287px",
+
+          padding: "0",
+          "&:hover": {
+            boxShadow: "0 0 20px green",
+          },
         }}
       >
         <Link to="/details/6">
@@ -39,7 +43,7 @@ const Sidebar = () => {
             <img
               src="https://itorrents-igruha.org/uploads/posts/2023-02/1677002741_cover2.jpg"
               alt=""
-              style={{ width: "200px", height: "278px" }} // Установите размеры картинки здесь
+              style={{ marginTop: "5%", width: "200px", height: "280px" }} // Установите размеры картинки здесь
             />
           </CardContent>
         </Link>
@@ -64,7 +68,7 @@ const Sidebar = () => {
             <FormControlLabel
               value="All"
               control={<Radio sx={{ display: "none" }} />}
-              label="All"
+              label="Все игры"
               sx={{
                 borderRadius: "15%",
                 margin: "10%",
@@ -77,9 +81,9 @@ const Sidebar = () => {
               }}
             />
             <FormControlLabel
-              value="Clothes"
+              value="Action"
               control={<Radio sx={{ display: "none" }} />}
-              label="Clothes"
+              label="Экшин"
               sx={{
                 borderRadius: "15%",
                 margin: "10%",
@@ -92,9 +96,9 @@ const Sidebar = () => {
               }}
             />
             <FormControlLabel
-              value="Shoes"
+              value="Shooter"
               control={<Radio sx={{ display: "none" }} />}
-              label="Shoes"
+              label="Шутеры"
               sx={{
                 borderRadius: "15%",
                 margin: "10%",
@@ -107,9 +111,100 @@ const Sidebar = () => {
               }}
             />
             <FormControlLabel
-              value="Accessories"
+              value="Simulator"
               control={<Radio sx={{ display: "none" }} />}
-              label="Accessories"
+              label="Симуляторы"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+
+            <FormControlLabel
+              value="Adventure"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Путешествия"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+            <FormControlLabel
+              value="Survival-horror"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Хорроры"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+            <FormControlLabel
+              value="Strategy"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Стратегии"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+            <FormControlLabel
+              value="Race"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Гонки"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+            <FormControlLabel
+              value="Strategy"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Стратегии"
+              sx={{
+                borderRadius: "15%",
+                margin: "10%",
+                backgroundColor: "#313843",
+
+                "&:hover": {
+                  color: "white",
+                  backgroundColor: "#39424F",
+                },
+              }}
+            />
+            <FormControlLabel
+              value="Strategy"
+              control={<Radio sx={{ display: "none" }} />}
+              label="Стратегии"
               sx={{
                 borderRadius: "15%",
                 margin: "10%",

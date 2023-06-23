@@ -35,17 +35,6 @@ const ProductDetail = () => {
   const MAX_RECENTLY_WATCHED = 2;
   return (
     <Box>
-      <Typography
-        sx={{
-          width: "73%",
-          margin: "0 auto",
-          fontSize: "16px",
-          marginTop: "20px",
-        }}
-      >
-        Home / {productDetails?.category} / {productDetails?.title}
-      </Typography>
-
       <Box
         sx={{
           display: "flex",
@@ -56,8 +45,8 @@ const ProductDetail = () => {
         <Box>
           <CardMedia
             sx={{
-              height: 467,
-              width: 452,
+              height: 300,
+              width: 200,
             }}
             image={mainImages[productDetails?.id] || productDetails?.pic1}
             title="green iguana"
@@ -112,14 +101,14 @@ const ProductDetail = () => {
               variant="h5"
               component="h2"
               gutterBottom
-              sx={{ color: "black", fontWeight: "bold", fontSize: "29px" }}
+              sx={{ color: "gray", fontWeight: "bold", fontSize: "29px" }}
             >
               {productDetails?.title}
             </Typography>
             <Typography
               variant="body1"
               gutterBottom
-              sx={{ color: "black", fontWeight: "bold", fontSize: "23px" }}
+              sx={{ color: "gray", fontWeight: "bold", fontSize: "23px" }}
             >
               {productDetails?.price} KGS
             </Typography>

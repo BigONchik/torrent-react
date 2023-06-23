@@ -1,7 +1,18 @@
 import { Box, Link, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // Здесь можно выполнить поиск или выполнить другую логику поиска
+    console.log("Выполняется поиск:", searchTerm);
+  };
   return (
     <div style={{ color: "white", zIndex: "0" }}>
       <Box
@@ -51,6 +62,15 @@ const Header = () => {
             </Typography>
           </Box>
         </Link>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={handleInputChange}
+            placeholder="Введите поисковый запрос"
+          />
+          <button type="submit">Найти</button>
+        </form>
       </Box>
     </div>
   );
