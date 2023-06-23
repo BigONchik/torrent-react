@@ -10,7 +10,7 @@ const Header = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // Здесь можно выполнить поиск или выполнить другую логику поиска
+    // Здесь можно выполнить поиск
     console.log("Выполняется поиск:", searchTerm);
   };
   return (
@@ -19,11 +19,13 @@ const Header = () => {
         sx={{
           padding: "24px 0 24px 0",
           position: "relative",
-          margin: "0 auto",
+          marginBottom: "5%",
           width: "996px",
+          marginLeft: "25%",
         }}
       >
         <Link
+          href="/"
           sx={{
             display: "inline-block",
             height: "70px",
@@ -62,15 +64,22 @@ const Header = () => {
             </Typography>
           </Box>
         </Link>
-        <form onSubmit={handleFormSubmit}>
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={handleInputChange}
-            placeholder="Введите поисковый запрос"
-          />
-          <button type="submit">Найти</button>
-        </form>
+        <Box sx={{ display: "flex", justifyContent: "end" }}>
+          <form onSubmit={handleFormSubmit}>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleInputChange}
+              placeholder="Поиск по сайту"
+              style={{
+                borderRadius: "50px",
+                width: "80%",
+                textAlign: "center",
+              }}
+            />
+            <button type="submit">Найти</button>
+          </form>
+        </Box>
       </Box>
     </div>
   );

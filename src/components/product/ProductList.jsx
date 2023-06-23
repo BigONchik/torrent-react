@@ -18,7 +18,7 @@ const ProductList = () => {
 
   // pagination
   const [page, setPage] = useState(1);
-  const itemsPerPage = 12; // 4 cards per row and 3 rows
+  const itemsPerPage = 20; // 4 cards per row and 3 rows
   const count = Math.ceil(products.length / itemsPerPage);
 
   const handleChange = (e, p) => {
