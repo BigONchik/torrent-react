@@ -72,20 +72,18 @@ const EditProduct = () => {
       </Typography>
       <Box
         sx={{
+          borderRadius: "30px",
           width: "60vw",
           margin: "10px auto",
-          backgroundColor: "red",
+          backgroundColor: "#2F426E",
           padding: "5% 5%",
-          boxShadow: "0px 0px 21px 15px rgba(255, 255, 255, 0.2)",
         }}
       >
         <TextField
           sx={{
-            backgroundColor: "white",
+            backgroundColor: "#0092BE",
             borderRadius: "5px",
             marginBottom: "20px",
-            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
-            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -96,11 +94,9 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: "white",
+            backgroundColor: "#0092BE",
             borderRadius: "5px",
             marginBottom: "20px",
-            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
-            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -111,11 +107,9 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: "white",
+            backgroundColor: "#0092BE",
             borderRadius: "5px",
             marginBottom: "20px",
-            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
-            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -126,11 +120,9 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: "white",
+            backgroundColor: "#0092BE",
             borderRadius: "5px",
             marginBottom: "20px",
-            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
-            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -141,11 +133,62 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: "white",
+            backgroundColor: "#0092BE",
             borderRadius: "5px",
             marginBottom: "20px",
-            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
-            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic4"
+          label="pic4"
+          variant="outlined"
+          value={product.pic4}
+        />
+        <TextField
+          sx={{
+            backgroundColor: "#0092BE",
+            borderRadius: "5px",
+            marginBottom: "20px",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic5"
+          label="pic5"
+          variant="outlined"
+          value={product.pic5}
+        />
+        <TextField
+          sx={{
+            backgroundColor: "#0092BE",
+            borderRadius: "5px",
+            marginBottom: "20px",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic6"
+          label="pic6"
+          variant="outlined"
+          value={product.pic6}
+        />
+        <TextField
+          sx={{
+            backgroundColor: "#0092BE",
+            borderRadius: "5px",
+            marginBottom: "20px",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="pic7"
+          label="pic7"
+          variant="outlined"
+          value={product.pic7}
+        />
+
+        <TextField
+          sx={{
+            backgroundColor: "#0092BE",
+            borderRadius: "5px",
+            marginBottom: "20px",
           }}
           fullWidth
           onChange={handleInp}
@@ -157,10 +200,10 @@ const EditProduct = () => {
 
         <CategorySelect product={product} setProduct={setProduct} />
 
-        <Box sx={{ backgroundColor: "orange", borderRadius: "5px" }}>
+        <Box sx={{ borderRadius: "5px" }}>
           <Button
             sx={{
-              backgroundColor: "white",
+              backgroundColor: "#0092BE",
               borderRadius: "5px",
               color: "black",
               fontSize: "22px",

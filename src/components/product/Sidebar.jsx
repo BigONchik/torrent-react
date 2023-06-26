@@ -27,7 +27,7 @@ const Sidebar = () => {
 
           padding: "0",
           "&:hover": {
-            boxShadow: "0 0 20px green",
+            boxShadow: "0 0 20px #89C80E",
           },
         }}
       >
@@ -43,7 +43,7 @@ const Sidebar = () => {
             <img
               src="https://itorrents-igruha.org/uploads/posts/2023-02/1677002741_cover2.jpg"
               alt=""
-              style={{ marginTop: "5%", width: "200px", height: "280px" }} // Установите размеры картинки здесь
+              style={{ marginTop: "5%", width: "200px", height: "280px" }}
             />
           </CardContent>
         </Link>
@@ -125,7 +125,6 @@ const Sidebar = () => {
                 },
               }}
             />
-
             <FormControlLabel
               value="Adventure"
               control={<Radio sx={{ display: "none" }} />}
@@ -175,21 +174,6 @@ const Sidebar = () => {
               value="Race"
               control={<Radio sx={{ display: "none" }} />}
               label="Гонки"
-              sx={{
-                borderRadius: "15%",
-                margin: "10%",
-                backgroundColor: "#313843",
-
-                "&:hover": {
-                  color: "white",
-                  backgroundColor: "#39424F",
-                },
-              }}
-            />
-            <FormControlLabel
-              value="Strategy"
-              control={<Radio sx={{ display: "none" }} />}
-              label="Стратегии"
               sx={{
                 borderRadius: "15%",
                 margin: "10%",

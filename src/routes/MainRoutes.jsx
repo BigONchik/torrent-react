@@ -11,7 +11,6 @@ import CartPage from "../pages/CartPage";
 import AuthPage from "../pages/AuthPage";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { ADMIN } from "../helpers/consts";
-import SupportPage from "../pages/SupportPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -50,10 +49,6 @@ const MainRoutes = () => {
       link: "/edit/:id",
       element: <EditProductPage />,
       id: 5,
-    },
-    {
-      link: "/support",
-      element: <SupportPage />,
     },
   ];
 

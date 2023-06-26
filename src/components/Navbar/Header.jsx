@@ -1,18 +1,16 @@
-import { Box, Link, Typography } from "@mui/material";
-import React, { useState } from "react";
-
+import { Box, Link, TextField, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
-  const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    // Здесь можно выполнить поиск
-    console.log("Выполняется поиск:", searchTerm);
-  };
+  useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
   return (
     <div
       style={{
@@ -71,21 +69,21 @@ const Header = () => {
             </Typography>
           </Box>
         </Link>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <form onSubmit={handleFormSubmit}>
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={handleInputChange}
-              placeholder="Поиск по сайту"
-              style={{
-                borderRadius: "50px",
-                width: "80%",
-                textAlign: "center",
-              }}
-            />
-            <button type="submit">Найти</button>
-          </form>
+        <Box
+          sx={{
+            width: "25%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <TextField
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            fullWidth
+            label="search..."
+            variant="standard"
+            color="primary"
+          />
         </Box>
       </Box>
     </div>

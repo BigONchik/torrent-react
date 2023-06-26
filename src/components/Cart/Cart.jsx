@@ -10,7 +10,7 @@ const Cart = () => {
 
   return (
     <div style={{ width: "85%", margin: "auto", padding: "50px 0 " }}>
-      <h1>Корзина({products.length})</h1>
+      <h1 style={{ marginBottom: "5%" }}>Корзина({products.length})</h1>
       <Box sx={{ display: "flex" }}>
         <CartLeftSide />
         <CartRightSide />

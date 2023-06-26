@@ -41,15 +41,21 @@ export default function CartRightSide() {
               sx={{ ...radioStyles }}
             />
             <FormControlLabel
-              value="ЭЛСОМ"
+              value="WebMoney"
               control={<Radio />}
-              label="ЭЛСОМ"
+              label="WebMoney"
               sx={{ ...radioStyles }}
             />
             <FormControlLabel
-              value="О!Деньги"
+              value="BitCoin"
               control={<Radio />}
-              label="О!Деньги"
+              label="BitCoin"
+              sx={{ ...radioStyles }}
+            />
+            <FormControlLabel
+              value="QIWI"
+              control={<Radio />}
+              label="QIWI"
               sx={{ marginBottom: "4%", ...radioStyles }}
             />
           </RadioGroup>

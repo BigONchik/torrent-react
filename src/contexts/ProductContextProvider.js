@@ -75,7 +75,7 @@ const ProductContextProvider = ({ children }) => {
   //! patch request (UPDATE PRODUCT)
   const saveEditedProduct = async (editedProduct) => {
     await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
-    navigate(`/products`);
+    navigate(`/`);
   };
 
   const fetchByParams = async (query, value) => {

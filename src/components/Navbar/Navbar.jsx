@@ -12,10 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { ListItemIcon } from "@mui/material";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
-  { name: "Заказать игру", link: "/support", id: 5 },
+
   {
     name: "Поддежать 💰",
     link: "https://vk.com/torrent_igruha?w=app6471849_-126357200",
@@ -23,11 +26,16 @@ const pages = [
   },
   { name: "ADMIN", link: "/admin", id: 7 },
 ];
-const settings = ["Profile", "Settings", "Dashboard", "Logout"];
+const settings = [
+  { name: "Cart", link: "/cart" },
+  { name: "Logout", link: "/" },
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { handleLogout, user } = useAuth();
+  const { email } = user;
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -176,10 +184,13 @@ function Navbar() {
             onClose={handleCloseUserMenu}
           >
             {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Link to="/cart" style={{ textDecoration: "none" }}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </Link>
+              <MenuItem
+                key={setting.name}
+                onClick={handleCloseUserMenu}
+                component={Link}
+                to={setting.link}
+              >
+                <Typography textAlign="center">{setting.name}</Typography>
               </MenuItem>
             ))}
           </Menu>

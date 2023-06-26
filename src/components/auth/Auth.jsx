@@ -3,8 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -32,8 +31,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -143,7 +140,7 @@ export default function Auth() {
 
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="https://youtu.be/dQw4w9WgXcQ" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
@@ -151,7 +148,7 @@ export default function Auth() {
                 {hasAccount ? (
                   <Link
                     onClick={() => setHasAccount(!hasAccount)}
-                    href="#"
+                    href=""
                     variant="body2"
                   >
                     {"Don't have an account? Register Now!"}

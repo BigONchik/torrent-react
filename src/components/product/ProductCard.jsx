@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import { Box, IconButton } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import AddIcon from "@mui/icons-material/Add";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { ADMIN } from "../../helpers/consts";
@@ -58,29 +58,24 @@ export default function ProductCard({ item }) {
           >
             {item.price} $
           </Typography>
-          {email === ADMIN ? (
-            <>
-              <Button size="small" onClick={() => deleteProduct(item.id)}>
-                Delete
-              </Button>
-              <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-                Edit
-              </Button>
-            </>
-          ) : (
-            <IconButton
-              sx={{
-                color: checkProductCart(item.id) ? "red" : "inherit",
-              }}
-              onClick={() => addProductToCart(item)}
-            >
-              <FavoriteIcon />
-            </IconButton>
-          )}
+
+          <Button size="small" onClick={() => deleteProduct(item.id)}>
+            Delete
+          </Button>
+          <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+            Edit
+          </Button>
+
+          <IconButton
+            sx={{
+              color: checkProductCart(item.id) ? "blue" : "white",
+            }}
+            onClick={() => addProductToCart(item)}
+          >
+            <AddIcon />
+          </IconButton>
         </Box>
       </CardContent>
-
-      {/* CardActions, if needed */}
     </Card>
   );
 }
