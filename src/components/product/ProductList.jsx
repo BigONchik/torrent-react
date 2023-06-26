@@ -45,6 +45,9 @@ const ProductList = () => {
             gap: "20px",
             overflowX: "auto",
             paddingRight: "20px",
+            "@media (max-width: 768px)": {
+              gridTemplateColumns: "2fr",
+            },
           }}
         >
           {currentData().map((item) => (
