@@ -1,19 +1,23 @@
-import { Box, Button, TextField, Typography } from '@mui/material';
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useProducts } from '../../contexts/ProductContextProvider';
-import CategorySelect from './CategorySelect';
+import { Box, Button, TextField, Typography } from "@mui/material";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useProducts } from "../../contexts/ProductContextProvider";
+import CategorySelect from "./CategorySelect";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({
-    title: '',
-    pic1: '',
-    pic2: '',
-    pic3: '',
+    title: "",
+    pic1: "",
+    pic2: "",
+    pic3: "",
+    pic4: "",
+    pic5: "",
+    pic6: "",
+    pic7: "",
     price: 0,
-    category: '',
+    category: "",
   });
 
   const { saveEditedProduct, getProductDetails, productDetails } =
@@ -32,7 +36,7 @@ const EditProduct = () => {
   }, [productDetails]);
 
   const handleInp = (e) => {
-    if (e.target.name === 'price') {
+    if (e.target.name === "price") {
       let obj = {
         ...product,
         [e.target.name]: Number(e.target.value),
@@ -50,35 +54,38 @@ const EditProduct = () => {
   return (
     <Box
       sx={{
-        paddingBottom: '3%',
-      }}>
+        paddingBottom: "3%",
+      }}
+    >
       <Typography
         sx={{
-          paddingTop: '2%',
-          color: 'white',
-          WebkitTextStroke: '3px black',
-          fontWeight: '900',
-          fontSize: '44px',
+          paddingTop: "2%",
+          color: "white",
+          WebkitTextStroke: "3px black",
+          fontWeight: "900",
+          fontSize: "44px",
         }}
         variant="h4"
-        align="center">
+        align="center"
+      >
         EDIT PAGE
       </Typography>
       <Box
         sx={{
-          width: '60vw',
-          margin: '10px auto',
-          backgroundColor: 'red',
-          padding: '5% 5%',
-          boxShadow: '0px 0px 21px 15px rgba(255, 255, 255, 0.2)',
-        }}>
+          width: "60vw",
+          margin: "10px auto",
+          backgroundColor: "red",
+          padding: "5% 5%",
+          boxShadow: "0px 0px 21px 15px rgba(255, 255, 255, 0.2)",
+        }}
+      >
         <TextField
           sx={{
-            backgroundColor: 'white',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            boxShadow: '0px 0px 30px 32px rgba(166, 212, 48, 0.2)',
-            boxShadow: '0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset',
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -89,11 +96,11 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: 'white',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            boxShadow: '0px 0px 30px 32px rgba(166, 212, 48, 0.2)',
-            boxShadow: '0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset',
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -104,11 +111,11 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: 'white',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            boxShadow: '0px 0px 30px 32px rgba(166, 212, 48, 0.2)',
-            boxShadow: '0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset',
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -119,11 +126,11 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: 'white',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            boxShadow: '0px 0px 30px 32px rgba(166, 212, 48, 0.2)',
-            boxShadow: '0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset',
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -134,11 +141,11 @@ const EditProduct = () => {
         />
         <TextField
           sx={{
-            backgroundColor: 'white',
-            borderRadius: '5px',
-            marginBottom: '20px',
-            boxShadow: '0px 0px 30px 32px rgba(166, 212, 48, 0.2)',
-            boxShadow: '0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset',
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+            boxShadow: "0px 0px 30px 32px rgba(166, 212, 48, 0.2)",
+            boxShadow: "0px 0px 7px 9px rgba(255, 67, 0, 0.2) inset",
           }}
           fullWidth
           onChange={handleInp}
@@ -150,25 +157,26 @@ const EditProduct = () => {
 
         <CategorySelect product={product} setProduct={setProduct} />
 
-        <Box sx={{ backgroundColor: 'orange', borderRadius: '5px' }}>
+        <Box sx={{ backgroundColor: "orange", borderRadius: "5px" }}>
           <Button
             sx={{
-              backgroundColor: 'white',
-              borderRadius: '5px',
-              color: 'black',
-              fontSize: '22px',
-              fontWeight: '900',
-              fontFamily: 'segoe ui',
-              '&:hover': {
-                backgroundColor: 'black',
-                color: 'white',
+              backgroundColor: "white",
+              borderRadius: "5px",
+              color: "black",
+              fontSize: "22px",
+              fontWeight: "900",
+              fontFamily: "segoe ui",
+              "&:hover": {
+                backgroundColor: "black",
+                color: "white",
               },
             }}
             onClick={() => saveEditedProduct(product)}
             fullWidth
             variant="outlined"
             size="large"
-            className="admin__button">
+            className="admin__button"
+          >
             SAVE CHANGES
           </Button>
         </Box>

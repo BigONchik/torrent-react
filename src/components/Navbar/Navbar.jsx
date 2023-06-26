@@ -12,10 +12,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { padding } from "@mui/system";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
-
   { name: "Заказать игру", link: "/support", id: 5 },
   {
     name: "Поддежать 💰",
@@ -48,14 +48,18 @@ function Navbar() {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#171a21", height: "70px" }}
+      sx={{
+        backgroundColor: "#171a21",
+        height: "70px",
+        width: "100%",
+        padding: "0",
+      }}
     >
       <Container
-        maxWidth="xl"
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "0%",
+          marginLeft: "18%",
           width: "100%",
         }}
       >
@@ -109,7 +113,7 @@ function Navbar() {
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, width: "70%" }}>
             {pages.map((page) => (
               <Link key={page.id} to={page.link}>
                 <Button
@@ -119,7 +123,6 @@ function Navbar() {
                       color: "white",
                       backgroundColor: "transparent",
                     },
-
                     color: "#8A8A8A",
                     display: "block",
                   }}
@@ -147,7 +150,6 @@ function Navbar() {
                     color: "white",
                     backgroundColor: "transparent",
                   },
-
                   color: "#8A8A8A",
                   display: "block",
                 }}

@@ -14,14 +14,21 @@ const Header = () => {
     console.log("Выполняется поиск:", searchTerm);
   };
   return (
-    <div style={{ color: "white", zIndex: "0" }}>
+    <div
+      style={{
+        color: "white",
+        width: "40%",
+        marginLeft: "25%",
+        marginRight: "0",
+      }}
+    >
       <Box
         sx={{
           padding: "24px 0 24px 0",
           position: "relative",
           marginBottom: "5%",
           width: "996px",
-          marginLeft: "25%",
+          marginLeft: "5%",
         }}
       >
         <Link
@@ -64,7 +71,7 @@ const Header = () => {
             </Typography>
           </Box>
         </Link>
-        <Box sx={{ display: "flex", justifyContent: "end" }}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           <form onSubmit={handleFormSubmit}>
             <input
               type="text"

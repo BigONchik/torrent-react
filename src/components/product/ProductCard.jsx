@@ -22,7 +22,7 @@ export default function ProductCard({ item }) {
   } = useAuth();
 
   return (
-    <Card sx={{ maxWidth: 250, backgroundColor: "#313843" }}>
+    <Card sx={{ maxHeight: 330, maxWidth: 161, backgroundColor: "#313843" }}>
       <CardMedia
         sx={{
           height: 0,
@@ -34,57 +34,54 @@ export default function ProductCard({ item }) {
         title="green iguana"
         onClick={() => navigate(`/details/${item.id}`)}
       />
-      <CardContent sx={{ backgroundColor: "#313843" }}>
+      <CardContent
+        sx={{ backgroundColor: "#313843", padding: "0", textAlign: "center" }}
+      >
         <Typography
           gutterBottom
           variant="h5"
           component="div"
-          sx={{ color: "lightgray" }}
+          sx={{ color: "lightgray", fontSize: "15px" }}
         >
           {item.title}
         </Typography>
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ color: "lightgray" }}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
         >
-          {item.price} $
-        </Typography>
-      </CardContent>
-      <div
-        style={{
-          borderTop: "1px solid rgba(0, 0, 0, 0.1)",
-          margin: "0 16px",
-        }}
-      />
-      <CardActions
-        sx={{
-          backgroundColor: "#313843",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        {email === ADMIN ? (
-          <>
-            <Button size="small" onClick={() => deleteProduct(item.id)}>
-              Delete
-            </Button>
-            <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-              Edit
-            </Button>
-          </>
-        ) : (
-          <IconButton
-            sx={{
-              color: checkProductCart(item.id) ? "red" : "inherit",
-            }}
-            onClick={() => addProductToCart(item)}
+          <Typography
+            variant="h10"
+            color="text.secondary"
+            sx={{ color: "lightgray", fontSize: "12px" }}
           >
-            <FavoriteIcon />
-          </IconButton>
-        )}
-      </CardActions>
+            {item.price} $
+          </Typography>
+          {email === ADMIN ? (
+            <>
+              <Button size="small" onClick={() => deleteProduct(item.id)}>
+                Delete
+              </Button>
+              <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+                Edit
+              </Button>
+            </>
+          ) : (
+            <IconButton
+              sx={{
+                color: checkProductCart(item.id) ? "red" : "inherit",
+              }}
+              onClick={() => addProductToCart(item)}
+            >
+              <FavoriteIcon />
+            </IconButton>
+          )}
+        </Box>
+      </CardContent>
+
+      {/* CardActions, if needed */}
     </Card>
   );
 }
