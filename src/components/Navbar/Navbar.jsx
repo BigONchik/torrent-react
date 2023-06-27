@@ -13,8 +13,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
-import { ListItemIcon } from "@mui/material";
-import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 
 const pages = [
   { name: "Главная", link: "/", id: 1 },
@@ -58,7 +56,7 @@ function Navbar() {
       sx={{
         backgroundColor: "#171a21",
         height: "70px",
-        width: "100%",
+        width: "260%",
         padding: "0",
       }}
     >
@@ -66,8 +64,16 @@ function Navbar() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginLeft: "18%",
-          width: "100%",
+          marginLeft: "8%",
+          width: "260%",
+          padding: "0",
+          "@media (max-width: 1440px)": {
+            marginLeft: "5%",
+          },
+          "@media (max-width: 1024px)": {
+            marginLeft: "9%",
+            width: "40%",
+          },
         }}
       >
         <Toolbar
@@ -148,7 +154,14 @@ function Navbar() {
                 display: "flex",
                 justifyContent: "flex-end",
                 width: "3%",
-                marginLeft: "6%",
+                marginLeft: "0",
+
+                "@media (max-width: 480px)": {
+                  marginRight: "60%",
+                },
+                "@media (max-width: 1024px)": {
+                  marginRight: "35%",
+                },
               }}
             >
               <Button

@@ -5,7 +5,7 @@ body {
 }
 
 .footer {
-  width: 100%;
+  width: 150%;
   height: auto;
   background-color: #222222;
   color: #818181;
@@ -41,8 +41,8 @@ body {
 .footer_text {
   position: absolute;
   bottom: 0;
-  margin-bottom: 5%;
-  margin-left: 25%;
+  margin-bottom: 2%;
+  margin-left: 15%;
 }
 .contact_1 {
   color: #858585;

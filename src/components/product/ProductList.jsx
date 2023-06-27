@@ -34,7 +34,16 @@ const ProductList = () => {
   // pagination
 
   return (
-    <Grid container sx={{ width: "100%", marginLeft: "25%" }}>
+    <Grid
+      container
+      sx={{
+        width: "100%",
+        marginLeft: "25%",
+        "@media (max-width: 768px)": {
+          marginLeft: "10%",
+        },
+      }}
+    >
       <Grid item sm={2} md={8}>
         <Box
           sx={{
@@ -45,8 +54,11 @@ const ProductList = () => {
             gap: "20px",
             overflowX: "auto",
             paddingRight: "20px",
+            "@media (max-width: 1024px)": {
+              width: "100%",
+            },
             "@media (max-width: 768px)": {
-              gridTemplateColumns: "2fr",
+              width: "450%",
             },
           }}
         >

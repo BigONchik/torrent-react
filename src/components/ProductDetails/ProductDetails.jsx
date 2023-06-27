@@ -34,7 +34,16 @@ const ProductDetail = () => {
   };
   const MAX_RECENTLY_WATCHED = 2;
   return (
-    <Box>
+    <Box
+      sx={{
+        "@media (max-width: 1024px)": {
+          marginLeft: "15%",
+        },
+        "@media (max-width: 768px)": {
+          marginLeft: "15%",
+        },
+      }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -78,21 +87,15 @@ const ProductDetail = () => {
             >
               {productDetails?.price} KGS
             </Typography>
-
-            <Grid container spacing={2}>
-              <Grid item xs={6} sm={4} md={3}>
-                <ProductSize />
-              </Grid>
-            </Grid>
           </CardContent>
           <Box>
             <Button
               variant="contained"
-              color="secondary"
+              color="primary"
               sx={{
                 backgroundColor: checkProductCart(productDetails?.id)
                   ? "#632d2d"
-                  : "#D2B48C",
+                  : "#016B8B",
                 color: "#FFFFFF",
                 borderRadius: 0,
                 width: "30px",
@@ -108,7 +111,9 @@ const ProductDetail = () => {
           </Box>
         </Box>
       </Box>
-      <Box
+      <Grid
+        container
+        md={8}
         sx={{
           display: "flex",
           marginTop: "14px",
@@ -184,10 +189,20 @@ const ProductDetail = () => {
             handleImageClick(productDetails?.id, productDetails?.pic7)
           }
         />
-      </Box>
-      <Box sx={{ marginTop: "20px" }}>
+      </Grid>
+      <Grid
+        container
+        sx={{
+          marginLeft: "15%",
+          marginTop: "20px",
+          width: "50%",
+          "@media (max-width: 1024px)": {
+            marginLeft: "30%",
+          },
+        }}
+      >
         <Typography variant="h6">Просмотренные товары</Typography>
-        <Grid container spacing={2}>
+        <Grid container spacing={0}>
           {recentlyWatched.map((product) => (
             <Grid item xs={12} md={6} key={product.id}>
               <Card
@@ -224,7 +239,7 @@ const ProductDetail = () => {
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Grid>
 
       <Box
         sx={{

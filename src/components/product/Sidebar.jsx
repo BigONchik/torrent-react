@@ -18,7 +18,16 @@ const Sidebar = () => {
   const { fetchByParams } = useProducts();
 
   return (
-    <Grid item md={3}>
+    <Grid
+      item
+      md={3}
+      sx={{
+        "@media (max-width: 768px)": {
+          marginLeft: "55%",
+          width: "0%",
+        },
+      }}
+    >
       <Box
         sx={{
           marginBottom: "45%",
@@ -28,6 +37,9 @@ const Sidebar = () => {
           padding: "0",
           "&:hover": {
             boxShadow: "0 0 20px #89C80E",
+          },
+          "@media (max-width: 768px)": {
+            display: "none",
           },
         }}
       >
@@ -43,23 +55,54 @@ const Sidebar = () => {
             <img
               src="https://itorrents-igruha.org/uploads/posts/2023-02/1677002741_cover2.jpg"
               alt=""
-              style={{ marginTop: "5%", width: "200px", height: "280px" }}
+              style={{
+                marginTop: "5%",
+                width: "200px",
+                height: "280px",
+                "@media (max-width: 768px)": {
+                  marginLeft: "55%",
+                  width: "0%",
+                },
+              }}
             />
           </CardContent>
         </Link>
       </Box>
       <Paper
         elevation={3}
-        sx={{ p: 2, boxShadow: 0, width: "100%", backgroundColor: "#313843" }}
+        sx={{
+          p: 2,
+          boxShadow: 0,
+          width: "100%",
+          backgroundColor: "#313843",
+          "@media (max-width: 768px)": {
+            backgroundColor: "transparent",
+            width: "0",
+            padding: "0",
+          },
+        }}
       >
-        <FormControl>
+        <FormControl sx={{}}>
           <FormLabel
             id="demo-radio-buttons-group-label"
-            sx={{ color: "#BCB6A4", marginTop: "10%" }}
+            sx={{
+              color: "#BCB6A4",
+              marginTop: "10%",
+              "@media (max-width: 768px)": {
+                marginLeft: "350%",
+                width: "0%",
+              },
+            }}
           >
             Категории
           </FormLabel>
           <RadioGroup
+            sx={{
+              "@media (max-width: 768px)": {
+                marginLeft: "350%",
+                width: "0%",
+              },
+            }}
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="All"
             name="radio-buttons-group"

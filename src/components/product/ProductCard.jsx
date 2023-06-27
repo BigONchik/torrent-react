@@ -21,7 +21,16 @@ export default function ProductCard({ item }) {
   } = useAuth();
 
   return (
-    <Card sx={{ maxHeight: 330, maxWidth: 161, backgroundColor: "#313843" }}>
+    <Card
+      sx={{
+        maxHeight: 330,
+        maxWidth: 161,
+        backgroundColor: "#313843",
+        "@media (max-width: 768px)": {
+          width: "100%",
+        },
+      }}
+    >
       <CardMedia
         sx={{
           height: 0,
